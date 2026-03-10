@@ -1,0 +1,203 @@
+@font-face {
+    font-family: 'Outfit';
+    src: url(../assets/fonts/outfit/Outfit-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Young Serif';
+    src: url(../assets/fonts/young-serif/YoungSerif-Regular.ttf) format('truetype');
+}
+
+body {
+    background: var(--color-stone-100);
+    min-height: 100vh;
+
+    font-family: 'Outfit', sans-serif;
+    font-size: var(--font-size-desktop-text-preset-4);
+    color: var(--color-stone-600);
+    line-height: 1.5;
+}
+
+main {
+    display: flex;
+    padding: var(--spacing-1600) var(--spacing-600);
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+.recipe-card {
+    display: flex;
+    width: 736px;
+    padding: var(--spacing-500);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-500);
+
+    border-radius: var(--spacing-300, 24px);
+    background: var(--color-white, #FFF);
+}
+
+.recipe-card img {
+    height: 300px;
+    align-self: stretch;
+    border-radius: var(--spacing-150);
+}
+
+.recipe-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-300);
+}
+
+.recipe-header h1 {
+    color: var(--color-stone-900);
+
+    font-family: "Young Serif";
+    font-size: var(--font-size-desktop-text-preset-1);
+    line-height: 100%;
+}
+
+.preparation-time {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-300);
+    align-self: stretch;
+    align-items: flex-start;
+    gap: var(--spacing-200);
+
+    border-radius: var(--spacing-150);
+    background: var(--color-rose-50);
+}
+
+.preparation-time h2 {
+    color: var(--color-rose-800, #7A284E);
+    font-size: var(--font-size-desktop-text-preset-3);
+    font-weight: 600;
+    line-height: 100%;
+}
+
+.preparation-time span {
+    font-weight: 700;
+}
+
+.preparation-time ul li::marker {
+    color: var(--color-rose-800);
+}
+
+.preparation-time ul li,
+.ingredients ul li {
+    margin-left: var(--spacing-300);
+    padding-left: var(--spacing-200);
+}
+
+
+.ingredients {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-300, 24px);
+    align-self: stretch;
+}
+
+.ingredients h2 {
+    color: var(--color-brown-800, #854632);
+    font-family: "Young Serif";
+    font-size: var(--font-size-desktop-text-preset-2, 28px);
+    line-height: 100%;
+}
+
+.ingredients ul li::marker {
+    color: var(--color-brown-800);
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-300);
+    align-self: stretch;
+}
+
+.instructions ul {
+    padding-left: var(--spacing-300);
+
+}
+
+.instructions ol li {
+    margin-left: var(--spacing-300);
+    padding-left: var(--spacing-200);
+}
+
+.instructions ol li::marker {
+    color: var(--color-brown-800);
+    font-weight: 700;
+}
+
+
+.instructions h2 {
+    color: var(--color-brown-800);
+
+    font-family: "Young Serif";
+    font-size: var(--font-size-desktop-text-preset-2, 28px);
+    line-height: 100%;
+}
+
+.instructions span {
+    font-weight: 700;
+}
+
+/* ----------------------------------- */
+.nutrition-table {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-300);
+
+    width: 100%;
+}
+
+.nutrition-table h2 {
+    color: var(--color-brown-800, #854632);
+
+    font-family: "Young Serif";
+    font-size: var(--font-size-desktop-text-preset-2, 28px);
+    line-height: 100%;
+
+}
+
+.nutrition-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.nutrition-table table td:first-child {
+    padding-left: var(--spacing-400);
+}
+
+.nutrition-table table td:last-child {
+    padding-right: var(--spacing-400);
+    padding-left: var(--spacing-200);
+
+    color: var(--color-brown-800);
+    font-weight: 700;
+}
+
+tr:first-child td {
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-stone-150);
+}
+
+tr:nth-child(n+2):nth-child(-n+3) td {
+    padding-top: var(--spacing-150);
+    padding-bottom: var(--spacing-150);
+}
+
+tr:nth-child(n+3) td {
+    border-top: 1px solid var(--color-stone-150);
+}
+
+tr:last-child td {
+    padding-top: 12px;
+    border-top: 1px solid var(--color-stone-150);
+}
