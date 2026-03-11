@@ -12,7 +12,7 @@ body {
     background: var(--color-stone-100);
     min-height: 100vh;
 
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Outfit';
     font-size: var(--font-size-desktop-text-preset-4);
     color: var(--color-stone-600);
     line-height: 1.5;
@@ -35,14 +35,19 @@ main {
     align-items: flex-start;
     gap: var(--spacing-500);
 
-    border-radius: var(--spacing-300, 24px);
+    border-radius: var(--spacing-300);
     background: var(--color-white, #FFF);
 }
 
 .recipe-card img {
-    height: 300px;
-    align-self: stretch;
+    width: 100%;
     border-radius: var(--spacing-150);
+}
+
+.recipe-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
 }
 
 .recipe-header {
@@ -53,9 +58,9 @@ main {
 
 .recipe-header h1 {
     color: var(--color-stone-900);
-
     font-family: "Young Serif";
     font-size: var(--font-size-desktop-text-preset-1);
+    font-weight: 400;
     line-height: 100%;
 }
 
@@ -63,7 +68,6 @@ main {
     display: flex;
     flex-direction: column;
     padding: var(--spacing-300);
-    align-self: stretch;
     align-items: flex-start;
     gap: var(--spacing-200);
 
@@ -71,8 +75,9 @@ main {
     background: var(--color-rose-50);
 }
 
+
 .preparation-time h2 {
-    color: var(--color-rose-800, #7A284E);
+    color: var(--color-rose-800);
     font-size: var(--font-size-desktop-text-preset-3);
     font-weight: 600;
     line-height: 100%;
@@ -82,12 +87,19 @@ main {
     font-weight: 700;
 }
 
+.preparation-time ul li:nth-child(even),
+.ingredients ul li:nth-child(even) {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
 .preparation-time ul li::marker {
     color: var(--color-rose-800);
 }
 
 .preparation-time ul li,
-.ingredients ul li {
+.ingredients ul li,
+.instructions ol li {
     margin-left: var(--spacing-300);
     padding-left: var(--spacing-200);
 }
@@ -98,11 +110,12 @@ main {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-300, 24px);
-    align-self: stretch;
+    margin-bottom: 32px;
+    position: relative;
 }
 
 .ingredients h2 {
-    color: var(--color-brown-800, #854632);
+    color: var(--color-brown-800);
     font-family: "Young Serif";
     font-size: var(--font-size-desktop-text-preset-2, 28px);
     line-height: 100%;
@@ -112,26 +125,33 @@ main {
     color: var(--color-brown-800);
 }
 
+
+.ingredients::after, .instructions::after {
+    content: "";
+    position: absolute;
+    bottom: -32px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-stone-150);
+}
+
+
 .instructions {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-300);
-    align-self: stretch;
-}
-
-.instructions ul {
-    padding-left: var(--spacing-300);
-
-}
-
-.instructions ol li {
-    margin-left: var(--spacing-300);
-    padding-left: var(--spacing-200);
+    margin-bottom: 32px;
+    position: relative;
 }
 
 .instructions ol li::marker {
     color: var(--color-brown-800);
     font-weight: 700;
+}
+
+.instructions ol li:nth-child(-n+5) {
+    margin-bottom: var(--spacing-100);
 }
 
 
@@ -158,7 +178,7 @@ main {
 }
 
 .nutrition-table h2 {
-    color: var(--color-brown-800, #854632);
+    color: var(--color-brown-800);
 
     font-family: "Young Serif";
     font-size: var(--font-size-desktop-text-preset-2, 28px);
